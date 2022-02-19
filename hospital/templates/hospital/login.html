@@ -1,0 +1,18 @@
+{%extends 'hospital/master.html'%} {%block title%}login{%endblock%} {%block body%}
+
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div class="container py-5">
+        <table border="3px" align="center" cellpadding="15px" cellmargin="2px">
+            {{data.as_table}}
+        </table>
+        <div class="container py-4" align="center">
+            <button class="btn btn-success" type="submit">Submit</button><br><br>
+            <a class="btn btn-primary " href="{%url  'hospital:register'%}">Not registered? Register here!</a>
+            <a class="btn btn-primary " href="{%url  'hospital:loginstaff'%}">Staff Login</a>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+    </div>
+
+</form>
+{%endblock%}

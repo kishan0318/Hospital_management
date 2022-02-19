@@ -1,0 +1,25 @@
+{% extends 'hospital/master.html' %} {% block title %}About us{% endblock title %} {% block body %}
+<div class="container py-1">
+    <h1 align="center" style="font-family:Stencil Std, fantasy;">About Us</h1>
+    <p class="hello" style="padding: 15px; margin:20px">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iure earum harum, corrupti id esse at debitis quas quos ipsum delectus eaque mollitia explicabo, deserunt ipsa, deleniti assumenda unde pariatur.</p>
+    <div class="row px-4">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+
+            </div>
+        </div>
+        <div class="col-8 ">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">it is a home tab </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">this is a prifile tab</div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">this is a</div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">this is setting tab</div>
+            </div>
+        </div>
+    </div>
+</div>
+<br> {% endblock%}

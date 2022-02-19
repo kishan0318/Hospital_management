@@ -1,0 +1,11 @@
+{%extends "hospital/master.html"%}{%block title%}Detailed appointment view{%endblock%}{%block body%}
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="border border-dark display-4">{{data.pk}}. {{data.name}}, Age:{{data.age}}</h1>
+            <h1 class="display-4"></h1>
+            <p class="lead">Date: {{data.date}}</p>
+            <p>{{data.description}}</p>
+        </div>
+    </div>
+</div>{%endblock%}

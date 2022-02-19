@@ -1,0 +1,17 @@
+{% extends 'hospital/master.html' %} {% block title %}Staff signup portal{% endblock title %} {% block body %}
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div class="container ">
+        <h1 align="center" style="font-family:Stencil Std, fantasy;">Staff Signup</h1>
+
+        <table border="3px" align="center" cellpadding="15px" cellmargin="2px">
+            {{data.as_table}}
+        </table>
+    </div>
+    <div class="col py-5" align="center">
+        <button class="btn btn-success" type="submit">Submit</button>
+        <input class="btn btn-danger" type="reset" value="Reset">
+    </div>
+</form>
+
+{% endblock body %}

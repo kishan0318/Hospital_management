@@ -1,0 +1,11 @@
+{%extends 'hospital/master.html'%} {%block title%}Pending Appointments{%endblock%} {%block body%}
+<br>
+<div class="container">
+    {%for j in d%}
+    <span class="d-block p-2 bg-success text-white">{{j.pk}}. Name: {{j.name}}, Age: ({{j.age}}), Department: {{j.dep_name}}
+        <a href="{% url 'hospital:dtlapview' j.id %}" class="btn btn-outline-dark"><i class="bi bi-eye"></i></a>
+        <a href="{% url 'hospital:edit_appointment' j.id %}" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+        <a href="{% url 'hospital:deleteap' j.id %}" class="btn btn-outline-dark"><i class="bi bi-trash"></i></a>
+          </span>
+    <br>{%endfor%} </div>
+{%endblock%}

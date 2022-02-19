@@ -1,0 +1,24 @@
+{%extends 'hospital/master.html'%} {%block title%}Delete application{%endblock%} {%block body%}
+<form method="post" enctype="multipart/form-data ">
+    {%csrf_token%}
+
+    <br>
+    <div class="container" align="center">
+        <table border="1% " cellspacing="5% " cellpadding="5% " style="background-color:aliceblue ">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Appointment date</th>
+                <th>Department</th>
+            </tr>
+            <tr>
+                <td>{{data.name}}</td>
+                <td>{{data.age}}</td>
+                <td>{{data.date}}</td>
+                <td>{{data.dep_name}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col py-5" align="center">
+        <button class="btn btn-danger" type="submit">Delete</button></div>
+</form> {%endblock%}

@@ -1,0 +1,24 @@
+{%extends "hospital/master.html"%}{%block title%}Success{%endblock%}{%block body%}
+<br>
+<table border="1%" cellspacing="1%" cellpadding="2%" align="center" style="background-color:aliceblue">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Selected department</th>
+        <th>Date</th>
+    </tr>
+    <tr>
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.dep_name}}</td>
+        <td>{{data.date}}</td>
+
+
+    </tr>
+    <td colspan="4"><br>
+        <marquee>Appointments booked successfully!</marquee>
+        <br></td>
+</table>
+<div align="center">
+    <a class="btn btn-outline-dark" href="{%url 'hospital:home' %}">Go back to home page</a>
+</div>{%endblock%}

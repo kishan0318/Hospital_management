@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% load bootstrap4 %} {% bootstrap_css%} {% bootstrap_javascript jquery="full" %} {%load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'hospital/style.css' %}">
+    <title>{%block title%} {%endblock title%} | CareFree </title>
+
+</head>
+
+<body>
+
+    <!-- nav bar bootstrap-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+        <a class="navbar-brand" href="#">CF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'hospital:home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <!-- <li class="nav-item active">
+                  <a class="nav-link" href="about">About</a>
+              </li>-->
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'hospital:contact' %}">Contact us</a>
+                </li>
+
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" arial-label="Toggle navigation">
+          Our online services</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{%url 'hospital:bed' %}">Check Beds Avilability and pricing</a>
+                        <a class="dropdown-item" href="{%url 'hospital:appointments'%}">Book Appointment</a>
+                    </div>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{request.user.username}}
+                  </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{%url 'hospital:logout' %}">logout</a>
+                    </div>
+                </li>
+                {%else%}
+                <li class="nav-item active">
+                    <a class="nav-link " href="{%url 'hospital:login' %}">Signin</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-outline-danger my-2 my-sm-0" href="{%url 'hospital:loginadmin' %} "> Admin Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </form>
+            {%endif%}
+        </div>
+    </nav>
+
+    <!-- nav bar end-->
+
+    {%block body %} {%endblock%}
+
+</body>
+
+<!-- Footer -->
+
+<footer>
+    <div class="footer-copyright " align="center ">
+        <p>Website Creator : Kishan Ganguli<br>Mail @ :
+            <a href=" ">gangulykishan@gmail.com</a></p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        font-family: 'Comic Sans Ms';
+        text-align: center;
+        padding: 1px;
+        background-color: black;
+        color: white;
+    }
+</style>
+
+</html>

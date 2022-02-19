@@ -1,0 +1,20 @@
+{% extends 'hospital/master.html' %} {% block title %}Contact{% endblock title%} {% block body %}
+<div class="container py-2">
+    <h1 align="center" style="font-family:Stencil Std, fantasy;">Contact Us</h1>
+</div>
+<div class="container py-2">
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+
+        <table border="3px" align="center" cellpadding="15px" cellmargin="2px">
+            {{form.as_table}}
+        </table>
+        <div class="col py-2" align="center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <input class="btn btn-danger" type="reset" value="Reset">
+        </div>
+
+        <br><br><br><br><br><br><br><br>
+    </form>
+</div>
+{%endblock%}

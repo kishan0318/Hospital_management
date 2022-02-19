@@ -1,0 +1,16 @@
+{%extends 'hospital/master.html'%} {%block title%}Signup{%endblock%} {%block body%}
+<div class="container ">
+    <h1 align="center" style="font-family:Stencil Std, fantasy;">Signup</h1>
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <table border="3px" align="center" cellpadding="15px" cellmargin="2px">
+            {{data.as_table}}
+        </table>
+
+        <div class="col py-5" align="center">
+            <button class="btn btn-success" type="submit">Submit</button>
+            <input class="btn btn-danger" type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+{%endblock%}
